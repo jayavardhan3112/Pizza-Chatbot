@@ -1,6 +1,6 @@
 # Pizza ordering app using Django
 
-This app is live [here](https://django-pizza-order-hkamboj.herokuapp.com) <br>
+This app is live [here](https://yoyo-pizzaapp.herokuapp.com/) <br>
 
 ## Installation
 
