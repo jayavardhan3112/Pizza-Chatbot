@@ -11,7 +11,7 @@
 
 <table class="text-center">
   <tr class="topbottomspace">
-    <th><h2>Checkout</h2></th>
+    <th><h2 class="display-4">Checkout</h2></th>
   </tr>
 </table>
 <div class="table responsive">
@@ -29,17 +29,17 @@
               <div class="col">
               {% for item in cart %}
                 <div class="row justify-content-center">
-                  <div class="col col-8 col-sm-8 col-md-6 col-lg-5">
+                  <div class="col col-8 col-sm-8 col-md-6 col-lg-5 blockquote">
                     {{ item }}
                     {% if item.toppings.all|length > 0 %}
-                    <ul class="list-unstyled mb-0" style="padding-left: 0.5em">
+                    <ul class="list-unstyled mb-0 blockquote" style="padding-left: 0.5em">
                     {% for topping in item.toppings.all %}
                       <li>{{ topping }}</li>
                     {% endfor %}
                     </ul>
                     {% endif %}
                   </div>
-                  <div class="col-3 col-sm-3 col-md-2 col-lg-2 text-right">
+                  <div class="col-3 col-sm-3 col-md-2 col-lg-2 text-right blockquote">
                     {{ item.price }}
                   </div>
                 </div>
@@ -47,15 +47,15 @@
                 <div class="row justify-content-center">
                   <div class="col col-8 col-sm-8 col-md-6 col-lg-5">
                   </div>
-                  <div style="font-weight: bold" class="col-3 col-sm-3 col-md-2 col-lg-2 text-right">
-                    Rs.{{ total }}
+                  <div style="font-weight: bold" class="col-3 col-sm-3 col-md-2 col-lg-2 text-right lead">
+                    Total Rs.{{ total }}
                   </div>
                 </div>
                 {% if not paid %}
                 <div class="row justify-content-center mt-4">
                   <form action="{% url 'charge' %}" method="post">
                   {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">Pay Now</button>
+                    <button type="submit" class="btn btn-lg btn-primary">Pay Now</button>
                   </form>
                 </div>
                 {% endif %}
@@ -63,7 +63,7 @@
                 <div class="row justify-content-center mt-4">
                   <form action="{% url 'place' %}" method="post">
                   {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">Place Order</button>
+                    <button type="submit" class="btn btn-lg btn-primary">Place Order</button>
                   </form>
                 </div>
                 {% endif %}

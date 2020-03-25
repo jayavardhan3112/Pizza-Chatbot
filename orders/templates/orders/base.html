@@ -24,35 +24,31 @@
     <!--<div class="container-fluid">-->
       <div class="row mt-2 mr-2 ml-2"  id="topnav">
         <div style="font:arial"  class="col bg-success" >
-          <h2 id="header" style="color:white">Pinnochio's Pizza & Subs</h2>
-
-
-        <!--</div>-->
-        <!--<div class="col-6 p-2 justify-content-center bg-white" align="center">-->
-	        <!--<img src="{% static 'css/pinocchio.gif' %}">-->
-          <!--<h2 id="header">Pinnochio's Pizza & Subs</h2>-->
-        <!--</div>-->
-        <!--<div class="col bg-danger">-->
+        </div>
+        <div class="col-6 p-2 justify-content-center bg-white" align="center">
+          <h2 class="display-4">Italian Yo Yo Pizza</h2>
+        </div>
+        <div class="col bg-danger">
         </div>
       </div>
       <div class="row m-0">
-        <nav class="navbar w-100 mr-2 ml-2 pb-0 pt-0 navbar-expand-md navbar-light bg-light">
+        <nav class="navbar w-100 mr-2 ml-2 pb-0 pt-0 navbar-toggler navbar-light bg-light">
 	      {% if user.is_authenticated %} 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <span class="navbar-text">
+          Hello, {{ user.first_name }} 
+        </span>
 	      <a class="navbar-brand" href="{% url 'menu' %}">Menu</a>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link active" href="{% url 'cart' %}">Cart ({{ cartcount }})<span class="sr-only">(current)</span></a>
-	            <a class="nav-item nav-link" href="{% url 'pending' %}">Pending Orders</a>
+	            <a class="nav-item nav-link" href="{% if user.is_authenticated %} {% url 'orders' %} {% else %} {% url 'pending' %} {% endif %}">Pending Orders</a>
 	            <a class="nav-item nav-link" href="{% url 'history' %}">Order History</a>
 	            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
             </div>
           </div>
-	        <span class="navbar-text">
-            Hello, {{ user.first_name }} 
-          </span>
         {% endif %}
         </nav>
       </div>

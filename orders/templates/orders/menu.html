@@ -154,7 +154,7 @@ $(document).ready(function()
 
  <div class="container">
     <div class="text-center">
-	     <h2>Our Menu</h2>
+	     <h2 class="display-4">Our Menu</h2>
 
     </div>
  </div>
@@ -164,11 +164,11 @@ $(document).ready(function()
  <div class="row">
       <!-- Regular Pizza -->
       <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="container">
+          <div class="container card card-body mb-4">
         <form action="{% url 'additem' %}" method="post">
         {% csrf_token %}
           {% for c in regular.category %}
-            {{ c }}
+            <p class="blockquote">{{ c }}</p>
           <input type="hidden" value="{{ c }}" name="category" />	
           {% endfor %}
           <div class="form-group mt-2"> 
@@ -192,26 +192,26 @@ $(document).ready(function()
             </select>
             {% endfor %}
             <div class="row">
-              <label for="regqty" class="col-2 col-form-label">Qty</label>
+              <label for="regqty" class="col-2 mt-2 lead">Qty</label>
             </div>
             <div class="row">
               <div class="col-sm-4"> 
               <input class="form-control" type="number" value="1" name="qty" id="regqty" min="1" max="50">
               </div>
+              <button type="submit" class="btn btn-primary">Add to Cart</button>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
         </form>
       </div>
       </div>
 
       <!-- Sicilian Pizza -->
       <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="container">
+            <div class="container card card-body mb-4">
         <form action="{% url 'additem' %}" method="post">
         {% csrf_token %}
           {% for c in sicilian.category %}
-          {{ c }}
+          <p class="blockquote">{{ c }}</p>
           <input type="hidden" value="{{ c }}" name="category" />	
           {% endfor %}
           <div class="form-group mt-2">
@@ -235,15 +235,15 @@ $(document).ready(function()
             </select>
             {% endfor %}
             <div class="row">
-              <label for="sicqty" class="col-2 col-form-label">Qty</label>
+              <label for="sicqty" class="col-2 mt-2 lead">Qty</label>
             </div>
             <div class="row">
               <div class="col-sm-4" >
                 <input class="form-control" type="number" value="1" name="qty" id="sicqty" min="1" max="50">
               </div>
+              <button type="submit" class="btn btn-primary">Add to Cart</button>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
         </form>
       </div>
       </div>
@@ -251,11 +251,11 @@ $(document).ready(function()
     <!--<tr>-->
       <!-- Subs -->
        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="container">
+          <div class="container card card-body mb-4">
         <form action="{% url 'additem' %}" method="post">
           {% csrf_token %}
             {% for c in subs.category %}
-              {{ c }}
+              <p class="blockquote">{{ c }}</p>
             <input type="hidden" value="{{ c }}" name="category" />	
             {% endfor %}
             <div class="form-group mt-2">
@@ -295,25 +295,25 @@ $(document).ready(function()
               {% endfor %}
               </div>
               <div class="row">
-                <label for="subsqty" class="col-2 col-form-label">Qty</label>
+                <label for="subsqty" class="col-2 mt-2 lead">Qty</label>
               </div>
               <div class="row">
                 <div class="col-sm-4" >
                   <input class="form-control" type="number" value="1" name="qty" id="subsqty" min="1" max="50">
                 </div>
+                <button type="submit" class="btn btn-primary">Add to Cart<Card></Card></button>
               </div>
             </div>
-          <button type="submit" class="btn btn-primary">Add to Cart<Card></Card></button>
         </form>
           </div>
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="container">
+          <div class="container card card-body mb-4">
         <form action="{% url 'additem' %}" method="post">
         {% csrf_token %}
 	        {% for c in platters.category %}
-	          {{ c }}
+	          <p class="blockquote">{{ c }}</p>
 	        <input type="hidden" value="{{ c }}" name="category" />	
 	        {% endfor %}
 	        <div class="form-group mt-2">
@@ -329,15 +329,15 @@ $(document).ready(function()
             {% endif %}
           {% endfor %}
             <div class="row">
-  	          <label for="saladsqty" class="col-2 col-form-label">Qty</label>
+  	          <label for="saladsqty" class="col-2 mt-2 lead">Qty</label>
 	          </div>
 	          <div class="row">
   	          <div class="col-sm-4" >
 	              <input class="form-control" type="number" value="1" name="qty" id="saladsqty" min="1" max="50">
   	          </div>
+              <button type="submit" class="btn btn-primary">Add to Cart</button>
 	          </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
         </form>
       </div>
       </div>
@@ -345,11 +345,11 @@ $(document).ready(function()
     <!--<tr>-->
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="container">
+          <div class="container card card-body mb-4">
         <form action="{% url 'additem' %}" method="post">
         {% csrf_token %}
 	        {% for c in pasta.category %}
-	        {{ c }}
+	        <p class="blockquote">{{ c }}</p>
 	        <input type="hidden" value="{{ c }}" name="category" />	
 	        {% endfor %}
 	        <div class="form-group mt-2">
@@ -365,25 +365,25 @@ $(document).ready(function()
             {% endif %}
           {% endfor %}
 	          <div class="row">
-  	          <label for="pastaqty" class="col-2 col-form-label">Qty</label>
+  	          <label for="pastaqty" class="col-2 mt-2 lead">Qty</label>
 	          </div>
 	          <div class="row">
               <div class="col-sm-4"> 
 	              <input class="form-control" type="number" value="1" name="qty" id="pastaqty" min="1" max="50">
   	          </div>
+              <button type="submit" class="btn btn-primary">Add to Cart</button>
 	          </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
         </form>
       </div>
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="container">
+          <div class="container card card-body mb-4">
         <form action="{% url 'additem' %}" method="post">
         {% csrf_token %}
 	        {% for c in salads.category %}
-	          {{ c }}
+	          <p class="blockquote">{{ c }}</p>
 	        <input type="hidden" value="{{ c }}" name="category" />	
 	        {% endfor %}
 	        <div class="form-group mt-2">
@@ -399,18 +399,19 @@ $(document).ready(function()
             {% endif %}
           {% endfor %}
             <div class="row">
-  	          <label for="saladsqty" class="col-2 col-form-label">Qty</label>
+  	          <label for="saladsqty" class="col-2 mt-2 lead">Qty</label>
 	          </div>
 	          <div class="row">
               <div class="col-sm-4"> 
 	              <input class="form-control" type="number" value="1" name="qty" id="saladsqty" min="1" max="50">
   	          </div>
+              <button type="submit" class="btn btn-primary">Add to Cart</button>
 	          </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
         </form>
       </div>
       </div>
+      <a href="{% url 'cart' %}" class="btn btn-primary btn-lg btn-block p-3 m-xl-5 d-inline-block">Checkout<Card></Card></a>
  </div>
   <!--</tr>-->
 
