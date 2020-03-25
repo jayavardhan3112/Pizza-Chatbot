@@ -5,7 +5,7 @@ This app is live [here](https://django-pizza-order-hkamboj.herokuapp.com) <br>
 ## Installation
 
 1. Open terminal using Ctrl+T. Run the following command <br>
-`git clone https://github.com/HemabhKamboj/Pizza-ordering-app.git`
+`git clone https://github.com/jayavardhan3112/Pizza-Chatbot.git`
 
 2. Create and active virtual environment using  <br>
 ` virtualenv -p python3 venv` <br>
